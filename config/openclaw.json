@@ -1,0 +1,20 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/node/.openclaw/workspace"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:18789",
+        "http://127.0.0.1:18789"
+      ]
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.6",
+    "lastTouchedAt": "2026-04-07T13:53:28.408Z"
+  }
+}

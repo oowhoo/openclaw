@@ -1,7 +1,10 @@
 services:
   openclaw-gateway:
+    build: .
     image: ${OPENCLAW_IMAGE:-openclaw:local}
     environment:
+      OPENCLAW_GATEWAY_MODE: "local"
+      OPENCLAW_ALLOW_UNCONFIGURED: "true"
       HOME: /home/node
       TERM: xterm-256color
       OPENCLAW_GATEWAY_TOKEN: ${OPENCLAW_GATEWAY_TOKEN:-}
