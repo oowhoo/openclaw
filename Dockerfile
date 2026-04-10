@@ -246,6 +246,14 @@ ENV NODE_ENV=production
 # Security hardening: Run as non-root user
 # The node:24-bookworm image includes a 'node' user (uid 1000)
 # This reduces the attack surface by preventing container escape via root privileges
+
+# Dockerfile의 'USER node' 바로 위에 추가하세요
+USER root
+RUN mkdir -p /home/node/.openclaw && \
+    cp /app/config/openclaw.json /home/node/.openclaw/openclaw.json && \
+    chown -R node:node /home/node/.openclaw
+# 이 아래에 원래 있던 USER node가 올 것입니다.
+
 USER node
 
 # Start gateway server with default config.
